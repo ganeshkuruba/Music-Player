@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1142.0" style="-fx-background-color: #1a1c20;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox layoutX="6.0" layoutY="6.0" prefHeight="744.0" prefWidth="276.0" style="-fx-background-color: #1a1c20;" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="6.0">
+         <children>
+            <Label fx:id="HiUserLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="95.0" prefWidth="276.0" text="    Hi user,">
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="allSongs" onAction="#initialize" prefHeight="52.0" prefWidth="263.0" text="  All songs">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/baseline_library_music_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="allArtists" onAction="#artistInitialise" prefHeight="51.0" prefWidth="260.0" text=" Arstists">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8_music_record_120px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="allAlbums" onAction="#albumInitialise" prefHeight="46.0" prefWidth="261.0" text="  Albums">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8_music_record_120px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="playlistMainBtn" onAction="#playlistInitialise" prefHeight="52.0" prefWidth="266.0" text="   Playlists" visible="false">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8_playlist_24px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="Favourites" onAction="#setFavourites" prefHeight="47.0" prefWidth="267.0" text=" Favourites" visible="false">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/96755115-simple-heart-icon-white-icon-with-shadow-on-transparent-background.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="recently_played" onAction="#recentlyPlayed" prefHeight="53.0" prefWidth="268.0" text="Recently Played" visible="false">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/1325134-200.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="trandingBtn" onAction="#trending" prefHeight="57.0" prefWidth="276.0" text="    Trending" visible="false">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/google-trends.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <ImageView fitHeight="120.0" fitWidth="276.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton fx:id="newPlaylistMainBtn" onAction="#CreateNewPlaylist" prefHeight="59.0" prefWidth="303.0" text="New Playlist" visible="false">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/icons8_edit_24px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <AnchorPane fx:id="anchorpaneCreatePlaylist" prefHeight="86.0" prefWidth="276.0" visible="false">
+               <children>
+                  <JFXTextField fx:id="newPlaylistTextField" alignment="CENTER" onAction="#okBtnActionHandler" prefHeight="34.0" prefWidth="276.0" promptText="Playlist Name" />
+                  <JFXButton fx:id="okBtn" buttonType="RAISED" layoutX="229.0" layoutY="53.0" onAction="#okBtnActionHandler" style="-fx-background-color: #000000;" text="OK" textFill="#747474" />
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="disappearTextFieldBtn" onAction="#disappearAnchorPane" prefHeight="82.0" prefWidth="276.0" text=" " />
+         </children>
+      </VBox>
+      <AnchorPane layoutX="279.0" layoutY="601.0" prefHeight="150.0" prefWidth="860.0" style="-fx-background-color: #1a1c20;" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <JFXButton fx:id="playBtn" layoutX="314.0" layoutY="68.0" onAction="#play" prefHeight="55.0" prefWidth="122.0" text="  " />
+            <JFXTextField fx:id="nowPlaying" alignment="CENTER" editable="false" focusColor="WHITE" labelFloat="true" layoutX="3.0" prefHeight="39.0" prefWidth="787.0" promptText="Now playing." unFocusColor="WHITE" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Bodoni MT Bold Italic" size="20.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </JFXTextField>
+            <JFXButton layoutX="467.0" layoutY="80.0" text="   ">
+               <graphic>
+                  <ImageView fx:id="forwardBtn" fitHeight="29.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@icons/baseline_skip_next_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="254.0" layoutY="79.0" text="  ">
+               <graphic>
+                  <ImageView fx:id="backwardBtn" fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@icons/baseline_skip_previous_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fx:id="playImage" fitHeight="40.0" fitWidth="47.0" layoutX="363.0" layoutY="76.0" onMouseClicked="#play" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/baseline_play_arrow_white_18dp.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="pauseBtn" layoutX="322.0" layoutY="71.0" onAction="#pausee" prefHeight="55.0" prefWidth="122.0" text="  " visible="false" />
+            <ImageView fx:id="pauseImage" fitHeight="40.0" fitWidth="53.0" layoutX="363.0" layoutY="79.0" onMouseClicked="#pausee" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@icons/baseline_pause_white_18dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+
+      <TableView fx:id="songTable" layoutX="280.0" layoutY="177.0" prefHeight="434.0" prefWidth="858.0" style="-fx-background-color: #484848;" stylesheets="@../tablecss.css" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="278.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="175.0">
+        <columns>
+          <TableColumn id="songName" fx:id="songColumn" editable="false" minWidth="100.0" prefWidth="512.0" style="background: #002;" text="Track" />
+            <TableColumn fx:id="goToArtist" prefWidth="251.0" text="Artists" />
+          <TableColumn fx:id="addNoOfTracksCol" prefWidth="98.0" text="No Of Tracks" />
+        </columns>
+         <padding>
+            <Insets bottom="4.0" top="4.0" />
+         </padding>
+      </TableView>
+      <Label fx:id="topLabel" layoutX="341.0" layoutY="20.0" prefHeight="66.0" prefWidth="214.0" text="All songs" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="23.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="closeBtn" layoutX="1110.0" layoutY="-5.0" onAction="#Close" prefHeight="2.0" prefWidth="10.0" text="X" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <textFill>
+            <RadialGradient centerX="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="SRC" labelFloat="true" layoutX="855.0" layoutY="104.0" onKeyTyped="#search" opacity="0.54" prefHeight="53.0" prefWidth="214.0" promptText="Explore">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+         <unFocusColor>
+            <RadialGradient centerX="0.5" centerY="1.0" radius="0.5">
+               <stops>
+                  <Stop color="WHITE" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </unFocusColor>
+         <focusColor>
+            <RadialGradient centerX="1.0" centerY="0.02857142857142858" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </focusColor>
+      </JFXTextField>
+      <JFXButton fx:id="searchBtn" layoutX="1056.0" layoutY="92.0" onAction="#search" prefHeight="82.0" prefWidth="85.0" text=" " />
+      <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="1089.0" layoutY="132.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons8_Search_52px.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="logonIconBtn" layoutX="1066.0" layoutY="6.0" onAction="#hideFunctionalities" prefHeight="34.0" prefWidth="36.0" text=" " />
+      <ImageView fx:id="loginIcon" fitHeight="26.0" fitWidth="20.0" layoutX="1079.0" layoutY="13.0" onMouseClicked="#hideFunctionalities" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/user2.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="loginLabel" layoutX="1026.0" layoutY="14.0" text="Login">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <JFXButton fx:id="clrRecent" layoutX="291.0" layoutY="150.0" onAction="#clearRecentlyPlayed" prefHeight="26.0" prefWidth="141.0" style="-fx-background-color: #1a1c20;" text="Clear recently played" textFill="WHITE" />
+   </children>
+   <padding>
+      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+   </padding>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
